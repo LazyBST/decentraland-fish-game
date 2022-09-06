@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outFile": "./bin/game.js",
-    "allowJs": true
+    "allowJs": true,
   },
   "include": [
     "src/**/*.ts",

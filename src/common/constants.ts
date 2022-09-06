@@ -1,0 +1,15 @@
+export const FISH_CONSTANTS = {
+  TIMER_LENGTH: 2,
+  MIN_SPEED: 0.5,
+  MAX_SPEED: 1.2,
+  MIN_JUMP: 0.5,
+  MAX_JUMP: 1.5,
+  PRECISION: 100,
+  POOL_SIZE: 10,
+  X_POS_MAX: 12.5,
+  X_POS_MIN: 3.5,
+  Y_POS_MAX: -0.1,
+  Y_POS_MIN: -0.5,
+  Z_POS_MAX: 5,
+  Z_POS_MIN: 1,
+};
