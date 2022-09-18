@@ -13,10 +13,8 @@ export class SwimJumpMove implements ISystem {
       let moveDirection;
       let timer = fish.getComponent(Timer);
       let fishProp = fish.getComponent(SpeedAndJump);
-      // console.log("timeleft ", fishProp);
       if (timer.timeLeft > 1 && timer.timeLeft <= 2) {
         moveDirection = new Vector3(0, fishProp.jumpHeight, fishProp.speed);
-        // console.log("timeleft 1 ", timer.timeLeft);
         timer.timeLeft -= dt;
       } else if (timer.timeLeft > 0 && timer.timeLeft <= 1) {
         moveDirection = new Vector3(
@@ -24,16 +22,11 @@ export class SwimJumpMove implements ISystem {
           -1 * fishProp.jumpHeight,
           fishProp.speed
         );
-        // console.log("timeleft 2 ", timer.timeLeft);
         timer.timeLeft -= dt;
       } else if (timer.timeLeft <= 0) {
         moveDirection = new Vector3(0, 0, fishProp.speed);
         timer.timeLeft = timer.totalTime;
-        // console.log("timeleft 3 ", timer.timeLeft);
-      } // else {
-      //   moveDirection = new Vector3(0, 0, 3);
-      //   timer.timeLeft++;
-      // }
+      }
       moveDirection = moveDirection
         ?.normalize()
         ?.multiplyByFloats(2 * dt, 2 * dt, 2 * dt);
@@ -49,7 +42,3 @@ export class SwimJumpMove implements ISystem {
     }
   }
 }
-
-// SwimJumpMove.bind = () => {};
-
-// engine.addSystem(new SwimJumpMove());

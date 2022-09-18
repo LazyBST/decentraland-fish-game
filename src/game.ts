@@ -1,7 +1,10 @@
 import { createFishPool } from "./entities/fishPool";
 import { SwimJumpMove } from "./customSystems/fistMovementSystem";
+import { PolkaBlink } from "./customSystems/polkaSystem";
 import { setTimeout } from "./common/timer";
 import { Score } from "./customComponents/score";
+import { Level } from "./customComponents/level";
+import { nftEntity } from "./entities/nftEntity";
 
 const _scene = new Entity("_scene");
 engine.addEntity(_scene);
@@ -3486,20 +3489,105 @@ gltfShape18.isPointerBlocker = true;
 gltfShape18.visible = true;
 sunflowerHead.addComponentOrReplace(gltfShape18);
 
-// Dynamic Code Start HERE
+/**************************************   Dynamic Code Start HERE   ****************************************/
 
 const gameScore = new Score();
+const gameLevel = new Level();
 
-const canvas = new UICanvas();
+const scoreCanvas = new UICanvas();
 
 // Create a textShape component, setting the canvas as parent
-const scoreText = new UIText(canvas);
+const scoreText = new UIText(scoreCanvas);
 scoreText.value = "Score: " + gameScore.score;
 scoreText.positionY = "50%";
 scoreText.positionX = "43%";
 scoreText.fontSize = 20;
 
+const canvas = new UICanvas();
+
+// Abstracts all the boards and text
+const storyBoard = new UIContainerRect(canvas);
+storyBoard.width = "70%";
+storyBoard.height = "30%";
+storyBoard.color = Color4.Magenta();
+storyBoard.opacity = 0.5;
+storyBoard.positionY = "30%";
+storyBoard.hAlign = "center";
+storyBoard.visible = false;
+
+const storyBoardHeading = new UIText(storyBoard);
+storyBoardHeading.value = "Story Line #" + (gameLevel.level + 1);
+storyBoardHeading.width = "25%";
+storyBoardHeading.vAlign = "top";
+storyBoardHeading.hAlign = "center";
+storyBoardHeading.fontSize = 32;
+storyBoardHeading.color = Color4.Yellow();
+
+const storyBoardText = new UIText(storyBoard);
+storyBoardText.value = "";
+storyBoardText.fontSize = 20;
+storyBoardText.textWrapping = true;
+storyBoardText.width = "70%";
+storyBoardText.hAlign = "center";
+storyBoardText.positionY = "-10%";
+
+const polkaDotBoard = new UIContainerRect(canvas);
+polkaDotBoard.width = "50%";
+polkaDotBoard.height = "30%";
+polkaDotBoard.color = Color4.Purple();
+polkaDotBoard.opacity = 0.5;
+polkaDotBoard.positionY = "-20%";
+polkaDotBoard.hAlign = "center";
+polkaDotBoard.visible = false;
+
+//TODO: move all texts to constants
+const polkaDotText = new UIText(polkaDotBoard);
+polkaDotText.value =
+  "Congrats, You won a PolkaDot Fish.\n\nCheckout PolkaDot and the amazing work they are doing at https://polkadot.network";
+polkaDotText.fontSize = 20;
+polkaDotText.textWrapping = true;
+polkaDotText.width = "70%";
+polkaDotText.hAlign = "center";
+polkaDotText.vAlign = "center";
+polkaDotText.hTextAlign = "center";
+polkaDotText.vTextAlign = "center";
+
+const greetBoard = new UIContainerRect(canvas);
+greetBoard.width = "60%";
+greetBoard.height = "40%";
+greetBoard.color = Color4.Blue();
+greetBoard.opacity = 0.5;
+greetBoard.positionY = "35%";
+greetBoard.hAlign = "center";
+greetBoard.visible = true;
+
+const greetBoardText = new UIText(greetBoard);
+greetBoardText.value =
+  'Hi there,\n\n Welcome to "Mission Sawalmem"\n\nPlay the game to understand our mission and win the displayed NFT after 100 points\n\nCatch a fish to start the game.';
+greetBoardText.fontSize = 20;
+greetBoardText.textWrapping = true;
+greetBoardText.width = "70%";
+greetBoardText.hAlign = "center";
+greetBoardText.vAlign = "center";
+greetBoardText.hTextAlign = "center";
+greetBoardText.vTextAlign = "center";
+
+engine.addEntity(nftEntity);
+
 setTimeout(500, () => {
-  createFishPool(_scene, engine, gameScore, scoreText);
+  createFishPool(
+    _scene,
+    engine,
+    gameScore,
+    scoreText,
+    storyBoard,
+    storyBoardText,
+    gameLevel,
+    storyBoardHeading,
+    polkaDotBoard,
+    greetBoard,
+    greetBoardText
+  );
   engine.addSystem(new SwimJumpMove());
+  engine.addSystem(new PolkaBlink());
 });
