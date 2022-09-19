@@ -16,14 +16,14 @@ export class SwimJumpMove implements ISystem {
       if (timer.timeLeft > 1 && timer.timeLeft <= 2) {
         moveDirection = new Vector3(0, fishProp.jumpHeight, fishProp.speed);
         timer.timeLeft -= dt;
-      } else if (timer.timeLeft > 0 && timer.timeLeft <= 1) {
+      } else if (timer.timeLeft >= 0 && timer.timeLeft <= 1) {
         moveDirection = new Vector3(
           0,
           -1 * fishProp.jumpHeight,
           fishProp.speed
         );
         timer.timeLeft -= dt;
-      } else if (timer.timeLeft <= 0) {
+      } else if (timer.timeLeft < 0) {
         moveDirection = new Vector3(0, 0, fishProp.speed);
         timer.timeLeft = timer.totalTime;
       }
@@ -36,6 +36,7 @@ export class SwimJumpMove implements ISystem {
         nextPosition.z < boundarySizeZMin
       ) {
         nextPosition.z = 2;
+        nextPosition.y = 0.5;
       }
 
       transformFish.position.copyFrom(nextPosition);

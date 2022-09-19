@@ -3574,7 +3574,7 @@ greetBoardText.vTextAlign = "center";
 
 engine.addEntity(nftEntity);
 
-setTimeout(500, () => {
+setTimeout(8000, () => {
   createFishPool(
     _scene,
     engine,
