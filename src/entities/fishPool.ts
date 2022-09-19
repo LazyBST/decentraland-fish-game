@@ -10,7 +10,6 @@ import {
 import { Score } from "../customComponents/score";
 import { Level } from "../customComponents/level";
 import { setTimeout } from "../common/timer";
-import { getUserData } from "@decentraland/Identity";
 
 const fishEntities: Entity[] = [];
 
@@ -93,27 +92,6 @@ function createFishPool(
           }
           scoreText.value = "Score: " + gameScore.score;
 
-          // // save user
-          // if (!userPublicKey) {
-          //   executeTask(async () => {
-          //     let data = await getUserData();
-
-          //     saveUserData(data);
-          //     log(data);
-          //     userPublicKey = data.publicKey;
-          //   });
-          // }
-
-          // //save score
-          // executeTask(async () => {
-          //   let data = {
-          //     userPublicKey: userPublicKey,
-          //     score: gameScore.score,
-          //   };
-          //   saveUserScore(data);
-          //   log(data);
-          // });
-
           //TODO: move constants to common/constants
           if (
             (gameScore.score == 1 || gameScore.score == 5) &&
@@ -132,7 +110,7 @@ function createFishPool(
             setTimeout(8000, () => {
               greetBoard.color = Color4.Blue();
               greetBoardText.value =
-                "Congrats you won!!\n\nHope you understand our mission and would support us.\n\nHere is your NFT.";
+                "Congrats you won!!\n\nHope you understand our mission and would support us.\n\nTo claim your NFT, please share your eth addresss at pom@sawalmem.org";
               greetBoard.visible = true;
               while (fishEntities.length > 0) {
                 const lastFish = fishEntities[fishEntities.length - 1];

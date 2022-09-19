@@ -3563,7 +3563,7 @@ greetBoard.visible = true;
 
 const greetBoardText = new UIText(greetBoard);
 greetBoardText.value =
-  'Hi there,\n\n Welcome to "Mission Sawalmem"\n\nPlay the game to understand our mission and win the displayed NFT after 100 points\n\nCatch a fish to start the game.';
+  'Hi there,\n\n Welcome to "Mission Sawalmem"\n\nPlay the game to understand our mission and win an NFT(till they last) after 100 points\n\nCatch a fish to start the game.';
 greetBoardText.fontSize = 20;
 greetBoardText.textWrapping = true;
 greetBoardText.width = "70%";
