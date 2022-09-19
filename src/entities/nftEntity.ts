@@ -17,8 +17,8 @@ nftEntity.addComponent(
 );
 nftEntity.addComponent(
   new Transform({
-    position: new Vector3(4, 4, 25),
-    rotation: new Quaternion(0, -1, 0, 1),
+    position: new Vector3(20, 6, 12.5),
+    rotation: new Quaternion(0, 0, -1, 1),
     scale: new Vector3(7, 7, 7),
   })
 );

@@ -9,8 +9,8 @@ import { nftEntity } from "./entities/nftEntity";
 const _scene = new Entity("_scene");
 engine.addEntity(_scene);
 const transform = new Transform({
-  position: new Vector3(0, 0, 0),
-  rotation: new Quaternion(0, 0, 0, 1),
+  position: new Vector3(0, 0, 16),
+  rotation: Quaternion.Euler(0, 90, 0),
   scale: new Vector3(1, 1, 1),
 });
 _scene.addComponentOrReplace(transform);
