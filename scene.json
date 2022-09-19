@@ -1,13 +1,13 @@
 {
   "display": {
-    "title": "fish_game_v1.0.0",
+    "title": "Mission Sawalmem (Fish Game)",
     "favicon": "favicon_asset",
     "navmapThumbnail": "scene-thumbnail.png"
   },
-  "owner": "",
+  "owner": "Ayush Arora",
   "contact": {
-    "name": "author-name",
-    "email": ""
+    "name": "Ayush Arora",
+    "email": "ayusharora17785@gmail.com"
   },
   "main": "bin/game.js",
   "tags": [],

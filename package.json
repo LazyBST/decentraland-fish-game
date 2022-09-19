@@ -1,7 +1,7 @@
 {
-  "name": "84381b1f-e59e-4bf4-a750-8ed8a5e958f8",
+  "name": "mission-sawalmem",
   "version": "1.0.0",
-  "description": "My new Decentraland project",
+  "description": "Supporting mission Sawalmem (a salmon fish restoration cause) through web3 by creating awareness and NFTs.",
   "scripts": {
     "start": "dcl start",
     "build": "build-ecs",
