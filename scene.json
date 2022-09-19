@@ -14,5 +14,16 @@
   "scene": {
     "parcels": ["-105,-91", "-106,-91", "-107,-91"],
     "base": "-107,-91"
-  }
+  },
+  "spawnPoints": [
+    {
+      "name": "spawn1",
+      "default": true,
+      "position": {
+        "x": 5,
+        "y": 15,
+        "z": 10
+      }
+    }
+  ]
 }
