@@ -100,7 +100,7 @@ function createFishPool(
             // show instructinos
             greetBoard.color = Color4.Teal();
             greetBoardText.value =
-              "Every fish carry 1 point and there is one Polka fist which carry 5 points.\n\n Reach 100 points to win an NFT!!";
+              "Each fish you catch is worth 1 point\n\nPink fish are worth 5 points\n\nGood luck!";
             setTimeout(11000, () => {
               greetBoard.visible = false;
             });

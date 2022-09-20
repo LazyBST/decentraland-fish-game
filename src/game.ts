@@ -3543,7 +3543,7 @@ polkaDotBoard.visible = false;
 //TODO: move all texts to constants
 const polkaDotText = new UIText(polkaDotBoard);
 polkaDotText.value =
-  "Congrats, You won a PolkaDot Fish.\n\nCheckout PolkaDot and the amazing work they are doing at https://polkadot.network";
+  "Coming Soon…$MEM token on Polkadot\n\nCheck out Polkadot.network to learn more!";
 polkaDotText.fontSize = 20;
 polkaDotText.textWrapping = true;
 polkaDotText.width = "70%";
@@ -3563,7 +3563,7 @@ greetBoard.visible = true;
 
 const greetBoardText = new UIText(greetBoard);
 greetBoardText.value =
-  'Hi there,\n\n Welcome to "Mission Sawalmem"\n\nPlay the game to understand our mission and win an NFT(till they last) after 100 points\n\nCatch a fish to start the game.';
+  "Welcome to -Salmon Journeys-\n\nCatch the Chinook salmon to win an exclusive NFT by Sawalmem\n\nReach 100 points to WIN\n\nCatch a fish to start the game.";
 greetBoardText.fontSize = 20;
 greetBoardText.textWrapping = true;
 greetBoardText.width = "70%";
