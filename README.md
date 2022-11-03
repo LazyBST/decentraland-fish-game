@@ -10,4 +10,4 @@ Try out the game here: https://play.decentraland.org/?NETWORK=mainnet&position=-
 ```npm i```
 
 # Start the game
-```dcl init```
+```npm run start```
